@@ -6,7 +6,7 @@
 \documentclass[a4paper, 11pt]{report}	% Document class, paper and font size
 \renewcommand{\baselinestretch}{1.1}	% 1.1 line spacing
 \renewcommand{\arraystretch}{1.1}	% 1.1 spacing in tables
-\usepackage[left=0.75in, right=0.75in, top=1in, bottom=1in]{geometry}	% 1" T/B, 0.75 L/R margins 
+\usepackage[left=0.75in, right=0.75in, top=1in, bottom=1in]{geometry}	% 1" T/B, 0.75" L/R margins 
 
 \usepackage{subfiles}	% For multi-part documents 
 
@@ -62,19 +62,21 @@
 \usepackage{hyperref}	% Advanced cross referencing, COMMENT THIS LINE TO HIDE RED BOXES, uncomment the line below to maintain functionality
 %\usepackage[hidelinks]{hyperref}	% Advanced cross referencing
 \begin{document}
-Hello World!
-% \subfile{0-Preamble/main.tex}		% Preamble (executive summary, disclaimer, ToC, LoF, LoT, nomenclature)
-% \subfile{1-Introduction/main.tex}	% Introduction (background, motivation, objectives, scope)
-% \subfile{2a-Literature/main.tex}	% Literature Review (RC/autonomous platforms for landmine detection)
-% \subfile{2b-Goals/main.tex}			% Goals and System Requirements (goals, scenario of operation, system requirements)
-% \subfile{3-Concept/main.tex}		% Concept Design (platform, sensors, electronics, software, etc.)
-% \subfile{4-Detail/main.tex}			% Detailed Design (platform, sensors, electronics, software, etc.)
-% \subfile{5-Management/main.tex}		% Project Managements (status update, WBS/Gantt chart, risk management, budget)
-% \subfile{6-Conclusion/main.tex}		% Conclusion and Future Work (summary, future work)
 
-% \printbibliography[title={References}]	% References
-% \addcontentsline{toc}{chapter}{References}	% Add Reference to ToC
+\textcolor{red}{Hello World!}
 
-% \subfile{7-Appendices/main.tex}		% Appendices (may split up if it gets too big)
+\subfile{0-Preamble/main.tex}		
+\subfile{1-Introduction/main.tex}	
+\subfile{2-Benchmarking/main.tex}	
+\subfile{3-LiteratureReview/main.tex}			
+\subfile{4-ConceptDesign/main.tex}		
+\subfile{5-DetailedDesign/main.tex}			
+\subfile{6-ProjectManagement/main.tex}		
+\subfile{7-Conclusion/main.tex}		
+
+\printbibliography[title={References}]	% References
+\addcontentsline{toc}{chapter}{References}	% Add Reference to ToC
+
+\subfile{8-Appendices/main.tex}		
 
 \end{document}          
