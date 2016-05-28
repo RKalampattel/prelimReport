@@ -2,4 +2,55 @@
 
 \begin{document}
 
+\includepdf{0-Preamble/coverpage.pdf}	% Get cover page (output from separate project)
+
+\pagenumbering{roman}	% Numbering style for preamble
+\phantomsection
+\addcontentsline{toc}{chapter}{Executive Summary}	% Manually add ES to ToC
+\chapter*{Executive Summary}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Disclaimer}	% Manually add ES to ToC
+\chapter*{Disclaimer}
+As the authors of this report, we declare that the material contained within is entirely our own work, unless otherwise specified. All work from other sources has been referenced accordingly. 
+\vspace{1in}
+
+\noindent\begin{tabular}{ll}
+\makebox[2.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Harrison Vince & Date\\[1in]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Jonathan Targett & Date\\[1in]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Peter Dawson & Date\\[1in]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Racquel Punu & Date\\[1in]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Rahul Kalampattel & Date
+\end{tabular}
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}	% Manually add ToC to ToC
+\tableofcontents
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}	% Manually add LoF to ToC
+\listoffigures
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}	% Manually add LoT to ToC
+\listoftables
+\newpage
+
+% Uncomment the three lines below to split nomenclature into two columns
+% \renewcommand*{\nompreamble}{\begin{multicols}{2}}
+% \renewcommand*{\nompostamble}{\end{multicols}}
+% \setlength{\columnsep}{3em}
+
+\printnomenclature
+\newpage
+
 \end{document}

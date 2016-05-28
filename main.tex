@@ -4,7 +4,7 @@
 % =================================================================== %
 
 \documentclass[a4paper, 11pt]{report}	% Document class, paper and font size
-\renewcommand{\baselinestretch}{1.1}	% 1.1 line spacing
+\renewcommand{\baselinestretch}{1.3}	% 1.3 line spacing
 \renewcommand{\arraystretch}{1.1}	% 1.1 spacing in tables
 \usepackage[left=0.75in, right=0.75in, top=1in, bottom=1in]{geometry}	% 1" T/B, 0.75" L/R margins 
 
@@ -43,10 +43,9 @@
 \usepackage{etoolbox}	% Sort nomenclature into sections as well
 \renewcommand\nomgroup[1]{%
 \item[\bfseries
-\ifstrequal{#1}{A}{ Acronyms}{ % First section of nomenclature 	
-\ifstrequal{#1}{G}{General symbols}{% Second 
-\ifstrequal{#1}{S}{Hovercraft calculation symbols}{ % Third
-{}}}}%
+\ifstrequal{#1}{A}{Acronyms}{ % First section of nomenclature 	
+\ifstrequal{#1}{S}{Symbols}{% Second section
+{}}}%
 ]}
 
 \usepackage{bookmark}	% For changing PDF bookmark settings
@@ -62,8 +61,6 @@
 \usepackage{hyperref}	% Advanced cross referencing, COMMENT THIS LINE TO HIDE RED BOXES, uncomment the line below to maintain functionality
 %\usepackage[hidelinks]{hyperref}	% Advanced cross referencing
 \begin{document}
-
-\textcolor{red}{Hello World!}
 
 \subfile{0-Preamble/main.tex}		
 \subfile{1-Introduction/main.tex}	

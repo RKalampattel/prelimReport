@@ -1,5 +1,105 @@
 \documentclass[main.tex]{subfiles}
 
 \begin{document}
+\pagenumbering{arabic}	% Numbering style for body
 
+\chapter{Introduction}
+\chaplabel{introduction}
+
+\section{Background and Motivation}
+\seclabel{background}
+The future mission for the Australian Defence Science and Technology Group (DSTG) is to develop an autonomous vehicle for Australian Defence Force (ADF) applications, with the main focus to reduce risk to ADF personnel. One of the risks present for ADF personal in conflict zones, such as in the Middle East, are Improvised Explosive Devices (IEDs) and landmines, namely anti-tank (AT) and anti-personnel (AP) mines. Detection of these threats before they detonate is a major incentive for the development of an autonomous platform with threat detection capabilities, namely landmine detection.
+\\
+\nomenclature[A]{DSTG}{Defence Science and Technology Group}% 
+\nomenclature[A]{ADF}{Australian Defence Force}% 
+\nomenclature[A]{IED}{Improvised Explosive Device}%
+\nomenclature[A]{AT}{Anti-Tank (Mine)}%
+\nomenclature[A]{AP}{Anti-Personnel (Mine)}%
+
+There are two primary detection methods utilised by the ADF, these include manual screening with the use of a metal detector (MD) and vehicle mounted screening using an MD and a Ground Penetrating Radar (GPR). Manual screening is the most common method and is accurate at detecting metallic objects. However, it is slow and lacks the ability to detect composite based landmines. Vehicle mounted detection methods are fast yet inaccurate, as they lack the ability to accurately determine the location of a threat from the use of large metal detectors. Due to having a GPR, the vehicle is able to detect composite mines, but because of the lack of sensor integration, the threat is unable to be confirmed requiring secondary manual sweeps of the area. Both methods require personnel to be in close proximity to the devices, posing considerable risk to their lives. %\textcolor{blue}{There are many new technologies present for landmine detection however an integration of multiple systems is required to allow for threat detection as well as confirmation.} <- I don't like this last sentence-peter
+\\
+\nomenclature[A]{GPR}{Ground Penetrating Radar}%
+\nomenclature[A]{MD}{Metal Detector}%
+
+
+Through communications with the DSTG, it was apparent that the safety of ADF personnel  was a priority. Currently, there is no method for landmine detection as well as confirmation in a single sweep where the operator is removed from the system. Therefore, this project proposes the use of an autonomous and unmanned platform for the mounting of current ADF landmine detection technologies with the aim to reduce the risk imposed upon ADF personnel. The focus of the project will be on the development of an autonomous platform as well as multi sensor integration targeted for threat detection and confirmation through the use of a metal detector in conjunction with a DSTG loaned GPR.
+\\
+
+%the rest is deletable
+%\\
+%\\platform automation is a necessity when coupled with the task of landmine detection. This project proposes the use  of a autonomous and unmanned platform for mounting landmine detection technologies.
+%\textcolor{green}{  \\
+% I get what you are trying to say but it's not worded right. /need to put unmanned as a autonomous paltfrom could still have a dude on it-peter
+%\textcolor{red}{How about:  "Platform automation is a requirement in order to ensure safety of ADF personnel." - Rac 
+%}
+%Therefore, further risk mitigation highlights the need for a system that is able to detect, confirm and accurately locate a threat. Thus, reducing the required field time to manually find and identify the threat. 
+%Changed a few words, sound okay? = Rac
+% does ^ belong in intro and motivation as well? then use another way to introduce the sentence below. 
+%}
+
+\textcolor{red}{do we need to discuss the issues and hardships for the project here?}
+\textcolor{red}{need to expand more on the need and motivation}
+\\\par
+
+
+
+\section{Project Goal}
+\seclabel{projectGoal}
+
+The goal for this project is to develop a prototype for landmine detection and confirmation. This will be completed through the use of an autonomous platform and compilation of data from a MD and GPR array. This requires multi sensor integration and advanced signal processing as well as software development for the platform navigation and automation. The project objectives necessary to realise this goal are highlighted below. these objectives are labelled as primary or extended, depending on their difficulty and scope.
+
+
+
+
+ 
+\subsection{Primary Objectives}
+% OVER THE WHOLE PRIMARY OBJECTIVES SHOULD WE BE USING THE WORD 'WILL' OR 'SHOULD'? as in: this will/should be implemented...
+\seclabel{primary}
+The primary objectives are the minimum allowable outcomes for the project and should be delivered upon the completion of the project. These objectives are:
+%i reckon get rid of 'for the project'
+\textcolor{red}{do we need to discuss how we are going to achieve these objectives? \textbf{NO!, i think we should only include what will indicate completion of the objective}}
+\begin{itemize}
+\item Selection and subsequent modification of a pre-existing platform for remote control via a hand held device. Necessary control systems will be implemented within the platform. there will be emphasis on the throttle, steering and brake systems to allow for full system control in a safe manner, with sufficient control dexterity to replace a manual operator. Each system will be tested separately to ensure that they function correctly and are safe to operate remotely. Once all systems are operating independently, simultaneous operation shall be conducted with the aim to be in control of the platform at all instances. %A full range of motions will be performed to ensure that the performance is as desired.
+% "A full range of motions will be performed to ensure that the performance is as desired" - a reader doesnt know what performance is required yet. i dont know if this is a real problem though, just thought id point it out.
+
+\item Modify a pre-existing platform to accommodate a GPR and a metal detector. Structural modifications will be conducted on the platform so that it can support and carry the chosen sensors safely while adhering to the operating requirements of both the vehicular platform and the sensors. %The necessary support structures will be designed so as not to cause interference with the sensors that could impair the signal responses. 
+% ^ is this sentence part of the goal? i feel like it needs to be more general, we can talk about interference later on down the track.
+Tests with the sensors will be used to determine the construction material for the attachment brackets, as well as determining the placement of the sensors. Sensor location with respect to the platform should not interfere with the ideal operating conditions for the sensors.
+
+\item Implement software to function as the framework for automation of the vehicle, allowing the platform to autonomously navigate and collect data under supervision from an operator. 
+The required navigation and control systems will be implemented once the platform is able to be directly controlled by a remote operator. The location, heading, speed and status of the metal detector and GPR will be required to be known. Once these values are known, then the framework for automation will be considered complete.
+% rephrase the last two sentences. maybe "The location, heading, speed, and status of the metal detector, GPR, and platform will be required to be known for the framework for automation to be considered complete."
+
+\item Implementation of autonomous detection and classification of subsurface objects, with a focus on identifying objects with a high likelihood of being a landmine. 
+% 'classification' rather than 'determination'
+interpretation of the output signals from the GPR and metal detector will be processed with the aim to identify and confirm with a percentage the likelyhood of a threat. % \textcolor{red}{this is too wordy from here} 
+%with a focus on achieving complete detection of subsurface objects and determination of mines with a high ratio of correct determinations to false-positives.\textcolor{red}{to here} 
+% how it is going to be achieved doesnt go in this section i dont think, "determination of mines with a high ratio of correct determinations to false-positives" is ok though, but too many determinations.
+Supplied data sets will be used to create and tune a detection algorithm to meet this goal, and operational trials will be conducted to test the effectiveness of the developed system.
+%again, i dont think we need to include how things will be done, but "operational trials will be conducted to test the effectiveness of the developed system" is ok.
+\item Logging of detected objects with GPS coordinates and determined confidence of the object being a landmine. Once a landmine has been located, this data will be recorded and transmitted to a hand held device held by a supervising operator. This device will display a map of the area of interest with a location of the detected object on the map.
+
+\subsection{Extended Objectives}
+\seclabel{extended}
+Extended objectives are those that are slightly outside the scope of the project and may be completed time permitted. These objectives are:
+
+\item Automatic traversal of a designated area enclosed by user defined way points. This is the first stage of automation. Initially, single way point navigation will be conducted, requiring the platform to travel from one predefined point to another before coming to a stop. Once this is achieved, way-points enclosing an area will be used requiring the platform to generate its own path to traverse the enclosed area.
+\item Provide a live video feed as well as live updates of vehicle location and direction to the operator's handheld device, allowing for greater visualisation of operating conditions of the remote vehicle, as well as greater ability to detect and respond appropriately to unknown obstacles in the search area.
+\item Physical marking of landmine locations by the remote platform at the time of detection, allowing mine-removal technicians to easily identify the location of interest with greater accuracy, and free from any potential calibration errors or systematic offsets from a GPS position.
+
+\section{Project Definition}
+\seclabel{projectDefinition}
+Due to the large number of countries where ADF personnel are deployed, the differing terrain and geographical properties present a challenge to build a single dedicated landmine detecting device. This section will cover the platforms operational scenarios, environments and performance specifications for different possible operating locations. Understanding of the operating conditions of a delivered system will influence the conceptual design of the project solution.
+\subsection{Scenario of Operation}
+\seclabel{scenario}
+
+\subsection{Operating Environments}
+\seclabel{operatingEnvironments}
+
+\subsection{Performance Specifications}
+\seclabel{performance}
+
+\section{Project Scope}
+\seclabel{projectScope}
+\end{itemize}
 \end{document}
