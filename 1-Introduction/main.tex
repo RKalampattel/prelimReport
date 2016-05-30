@@ -8,6 +8,8 @@
 
 \section{Background and Motivation}
 \seclabel{background}
+\textcolor{green}{I really hate this opening sentence. I can't think of a better one but I think this is a pretty atrocious opening.}
+
 A future mission for the Defence Science and Technology Group (DSTG) is to develop an autonomous platform \sout{vehicle} for Australian Defence Force (ADF) applications.\sout{, with the main focus being to reduce risk to ADF personnel.} 
 \textcolor{red}{(Makes more sense to introduce the risk first, then say the DSTG is trying to reduce this risk - RK)} 
 One of the risks present for ADF personnel in conflict zones, such as in the Middle East, are Improvised Explosive Devices (IEDs) and landmines, namely anti-tank (AT) and anti-personnel (AP) mines. Accurate detection of these threats, while reducing the risk to ADF personnel, \sout{before they detonate} is a major incentive for the development of an autonomous platform with landmine \sout{threat} detection capabilities.\sout{, namely landmine detection.}
@@ -39,7 +41,6 @@ Through communications with the DSTG, it was apparent that the safety of ADF per
 % does ^ belong in intro and motivation as well? then use another way to introduce the sentence below. 
 %}
 
-\textcolor{red}{the fact that there is one line on this page really bothers me}
 \textcolor{red}{do we need to discuss the issues and hardships for the project here?}
 \textcolor{red}{need to expand more on the need and motivation}
 \\\par
@@ -49,7 +50,8 @@ Through communications with the DSTG, it was apparent that the safety of ADF per
 \section{Project Goal}
 \seclabel{projectGoal}
 
-The goal for this project is to develop a prototype for landmine detection and confirmation. This will be completed through the use of an autonomous platform and compilation of data from a MD and GPR array. This requires multi sensor integration and advanced signal processing as well as software development for the platform navigation and automation. The project objectives necessary to realise this goal are highlighted below. these objectives are labelled as primary or extended, depending on their difficulty and scope.
+The goal for this project is to develop a prototype for \textcolor{green}{autonomous} landmine detection and confirmation\textcolor{green}{, with a focus on reduction of false positive instances}. This will be completed through the use of an autonomous \textcolor{green}{vehicular} platform and compilation of \textcolor{green}{sensory} data from a MD and GPR array. \sout{This requires}\textcolor{green}{Achievement this goal will require} multi sensor integration and advanced signal processing as well as software development for the platform navigation and automation. The project objectives necessary to achieve this goal are \sout{highlighted} \textcolor{green}{described} below. 
+%These objectives are labelled as primary or extended, depending on their difficulty and scope.
 
 
 
@@ -61,17 +63,18 @@ The goal for this project is to develop a prototype for landmine detection and c
 The primary objectives are the minimum allowable outcomes for the project and should be delivered upon the completion of the project. These objectives are:
 %i reckon get rid of 'for the project'
 % yes i think so too
-\textcolor{red}{do we need to discuss how we are going to achieve these objectives? \textbf{NO!, i think we should only include what will indicate completion of the objective } - I think we need to include something on how achievable it is (as per the project charter feedback)}
+\textcolor{red}{do we need to discuss how we are going to achieve these objectives? \textbf{NO!, i think we should only include what will indicate completion of the objective } - I think we need to include something on how achievable it is (as per the project charter feedback)} \textcolor{green}{I 100 percent agree. outline of what we want to achieve, very brief statement on what we consider achieving to be. The rest of this section is pretty much on-point though.}
 \begin{itemize}
 \item Selection and subsequent modification of a pre-existing platform for remote control via a hand held device. Necessary control systems will be implemented within the platform. there will be emphasis on the throttle, steering and brake systems to allow for full system control in a safe manner, with sufficient control dexterity to replace a manual operator. Each system will be tested separately to ensure that they function correctly and are safe to operate remotely. Once all systems are operating independently, simultaneous operation shall be conducted with the aim to be in control of the platform at all instances. %A full range of motions will be performed to ensure that the performance is as desired.
 % "A full range of motions will be performed to ensure that the performance is as desired" - a reader doesnt know what performance is required yet. i dont know if this is a real problem though, just thought id point it out.
+% ^^ whoever wrote that comment - agreed
 
 \item Modify a pre-existing platform to accommodate a GPR and a metal detector. Structural modifications will be conducted on the platform so that it can support and carry the chosen sensors safely while adhering to the operating requirements of both the vehicular platform and the sensors. %The necessary support structures will be designed so as not to cause interference with the sensors that could impair the signal responses. 
 % ^ is this sentence part of the goal? i feel like it needs to be more general, we can talk about interference later on down the track.
 Tests with the sensors will be used to determine the construction material for the attachment brackets, as well as determining the placement of the sensors. Sensor location with respect to the platform should not interfere with the ideal operating conditions for the sensors.
 
 \item Implement software to function as the framework for automation of the vehicle, allowing the platform to autonomously navigate and collect data under supervision from an operator. 
-The required navigation and control systems will be implemented once the platform is able to be directly controlled by a remote operator. The location, heading, speed and status of the metal detector and GPR will be required to be known. Once these values are known, then the framework for automation will be considered complete.
+The required navigation and control systems will be implemented once the platform is able to be directly controlled by a remote operator. \sout{The location, heading, speed and status of the metal detector and GPR will be required to be known. Once these values are known, then the framework for automation will be considered complete.}\textcolor{blue}{The location, heading, speed, and status of the metal detector, GPR, and platform will be required to be known for the framework for automation to be considered complete.}
 % rephrase the last two sentences. maybe "The location, heading, speed, and status of the metal detector, GPR, and platform will be required to be known for the framework for automation to be considered complete."
 
 \item Implementation of autonomous detection and classification of subsurface objects, with a focus on identifying objects with a high likelihood of being a landmine. 
@@ -96,20 +99,20 @@ Extended objectives are those that are slightly outside the scope of the project
 
 \section{Project Definition}
 \seclabel{projectDefinition}
-Due to the large number of countries where ADF personnel are deployed, the differing terrain and geographical properties present a challenge to build a single dedicated landmine detecting device. This section will cover the platforms operational scenarios, environments and performance specifications for different possible operating locations. Understanding of the operating conditions of a delivered system will influence the conceptual design of the project solution.
+Due to the large number of countries where ADF personnel are deployed \textcolor{green}{and are at risk from IEDs and mines}, the differing terrain and geographical properties present a challenge to build a single dedicated landmine detecting device. This section will cover the platforms operational scenarios, environments and performance specifications for different possible operating locations. \textcolor{green}{An u}nderstanding of the operating conditions of a delivered system will influence the conceptual design of the project solution.
 \subsection{Scenario of Operation}
 \seclabel{scenario}
 
 \subsubsection{General Mission Profile}
 \seclabel{MissionProfile}
-The general mission profile describes the basic use case of the platform regardless of the platform selected or geographical variables. This is the expected manner in which the delivered system will be used by an operator to achieve the project goal of autonomous landmine detection, and has formed the basis of hardware and software designs.
+The general mission profile describes the sout{basic} \textcolor{green}{intended} use case of the platform regardless of the platform selected or geographical variables. This is the expected manner in which the delivered system will be used by an operator to achieve the project goal of autonomous landmine detection, and has formed the basis of hardware and software designs.
 \begin{quote}\textit{The platform starts from its home location, and travels via remote control to an area of interest; the boundaries of this area are selected using GPS coordinates. Once it has arrived, the platform autonomously scans its surroundings for landmines using both a metal detector and GPR. Possible points where landmines are identified are logged with GPS coordinates allowing for a map of the area to be developed. On-board sensors are used for object detection (object avoidance is not expected to be implemented), and a video feed may be streamed in real time to the operator. Once the platform has scanned the designated area, it returns back to the starting location where it is manually controlled back to its home location. If at any point the operator wishes to abort the mission or signal between the platform and the tablet becomes lost, the platform will stop immediately.}
 \end{quote}
 \subsection{Operating Environments}
 \seclabel{operatingEnvironments}
 \subsubsection{Real World Environments}
 \seclabel{IRL}
-The real world operating conditions for the platform in different locations are considered. These considerations take into account the types of vegetation, soil and terrain, as well as mine types and affected area sizes. The countries considered are those where ADF personnel are present and heavily affected by mines. These locations include Egypt and regions of the Middle East, namely Iran \parencite{AustralianGovernment2016}. The requirements and needs of mine removal operators in these environments are used to identify the needs and requirements for an effective mine detection system.
+The real world operating conditions for the platform in different locations are considered. \textcolor{green}{(So? this sentence doesn't add anything.} These considerations take into account the types of vegetation, soil and terrain, as well as mine types and affected area sizes. The countries considered are those where ADF personnel are present and heavily affected by mines. These locations include Egypt and regions of the Middle East, namely Iran \parencite{AustralianGovernment2016}. The requirements and needs of mine removal operators in these environments are used to identify the needs and requirements for an effective mine detection system.
 
 \subsubsection{Eqypt}
 \seclabel{Egypt}
@@ -118,8 +121,9 @@ Egypt is listed as the country most contaminated by mines with an area of roughl
  \subsubsection{Iran}
  \seclabel{Iran}
  Iran has an area of approximately 18 thousand square kilometres of land contaminated with 12-16 million mines left over from the 1980-1988 Iran-Iraq conflict \parencite{landmineMonitor2015}. The main areas of contamination are along the provinces of Khuzestan which is mainly covered with sandy soils similar to those in Egypt. Thus the system requirements for the platform would be similar to those required for Egypt
- \subsubsection{Ideal Operating Environment}
- Using the real world environmental conditions, an ideal environment can be developed for the aid of platform and equipment testing to allow for ease of test replication. The ideal operating environment includes: \textbf{\color{red}{THIS IS A LITTLE TRICKY TO READ - CONSIDER REWORDING}}
+ \subsubsection{Notional Operating Environment}
+ \textcolor{green}{Note: I can't remember who told me this - but putting 'ideal' anywhere can very quickly sound like a cop-out. }
+ Using the real world environmental conditions, an ideal environment can be developed for the aid of platform and equipment testing to allow for ease of test replication. The \sout{ideal}\textcolor{green}{targeted} operating environment \sout{includes} \textcolor{green}{is identified by}: \textbf{\color{red}{THIS IS A LITTLE TRICKY TO READ - CONSIDER REWORDING}}
  \begin{itemize}
  \item Sandy flat ground 
  \item Low mineral content
@@ -136,12 +140,14 @@ The platform is required to be able to perform certain tasks to ensure that the 
 \item The platform must be able to travel forwards and maintain a certain speed while following a straight course. Reverse as well as left and right turning are also required for navigation purposes.
  \item The platform should be able to carry a payload of 100 kg. The MD and GPR with their respective control boxes have an estimated gross weight of 80 kg. This allows 20 kg for the necessary control units and computers, as well as any unforeseen weight additions or contributions. 
 \item The platform should be able to be easily modified for controlling remotely as well as the attachment of sensors. Easy attachment of sensors would ensure that there are no unnecessary delays in the project due to design issues. Ideally, a platform which has the ability to have off the shelf supports attached to it would be ideal as minimal modifications would be required. This would result in more time for the testing of the system. 
-\item The platform should be easily transportable with minimum disassembly required allowing for ease of transport from one location to another. Thus, it should be able to fit on the back of a Ute or small truck with minimal disassembly. 
+\item The platform should be easily transportable with minimum disassembly required allowing for ease of transport from one location to another. Thus, it should be able to fit on the back of a sout{U}ute or small truck with minimal disassembly. 
 \item Operate at a speed of 5 km/h as this is the current operational speed defined by the DSTG.
-\item Come to a complete stop from operational speed in 1 meter.
+\item Come to a complete stop from operational speed in 1 \sout{meter}\textcolor{green}{metre [watch your Americanisations people]}.
 \end{itemize}
 \subsubsection{Environment}
 \seclabel{environment}
+\textbf{\textcolor{green}{I think this section needs to be changed to reflect that we haven't designed anything yet. We're imposing limits here on what we will design to, and therefore place limits on our deliverables. These restrictions here aren't for anyone but us. Needs a tense change IMO}}
+
 The platform is designed to operate under certain environmental conditions. These operating conditions are highlighted below:
 \begin{itemize}
 \item Terrain: The platform is able to operate over dry, loose sand or gravel with sparse vegetation. Ideal terrains will be roads but testing on open fields with minimal obstacles and vegetation will also be conducted.
@@ -161,7 +167,8 @@ The sensor parameters for landmine detection that the project aims to comply to 
 
 \section{Project Scope}
 \seclabel{projectScope}
-\textcolor{red}{This section will need to include: What the soil types are, what our operating conditions are, what is the methodology, etc. NOT a scenario of operations}
+\textcolor{red}{This section will need to include: What the soil types are, what our operating conditions are, what is the methodology, etc. NOT a scenario of operations.} 
+\textcolor{green}{MAZ COMMENT: involve your aims. talk about the scope of method as well.}
 %Justification: A brief statement regarding the business need your project addresses. (A more detailed discussion of the justification for the project appears in the project charter.)
 %Product scope description: The characteristics of the products, services, and/or results your project will produce.
 %Acceptance criteria: The conditions that must be met before project deliverables are accepted.
@@ -184,5 +191,5 @@ The landmine detection scope of the project includes the autonomous detection an
 The platform operation conditions, landmine location coordinates and percentage probability will be transmitted to an operator device. This is implemented through software development in conjunction with the remote control of the platform. The software device will not include live video feed of the current operations and mission data as this is outside of the project scope. Development of this software is limited to open source and minimal commercial software development packages.
 
 \textcolor{red}{INSERT REFERENCE TO NEXT SECTIONS HERE?}
-
+ 
 \end{document}
