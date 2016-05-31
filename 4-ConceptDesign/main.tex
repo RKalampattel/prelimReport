@@ -3,9 +3,11 @@
 \begin{document}
 \chapter{Concept Design}
 \chaplabel{conceptDesign}
+\textcolor{red}{Need a paragraph to introduce the concept design and what it will cover}
+
 
 \section{Platform Selection}
-A platform is used as a means to mount the required detection equipment and to act as the foundation for a completely autonomous system.  Design and construction of the platform is not in the scope of the project and so the modification of an existing platform was the preferred approach. The selected platforms included in the decision process were based directly on their availability to the project, whether a commercial product or the loan of equipment. Primary factors that were considered during the selection process were taken from the Project Specifications (see \secref{performance}) and the Project Scope (see \secref{projectScope}). The following list outlines the criterion used during the process and the decision matrix (\figref{platformDecision}). In general, a score of 5 indicated that a requirement had only just been satisfied or that the criterion was only just feasible for that platform, with any difference being representative of a rise or fall in the platforms capability with respect to that requirement. Scores had a lower limit of 1 and an upper limit of 10.
+A platform is used as a means to mount the required detection equipment and to act as the foundation for a completely autonomous system.  Design and construction of the platform is not in the scope of the project and so the modification of an existing platform was the preferred approach. The selected platforms included in the decision process were based directly on their availability to the project, whether a commercial product or the loan of equipment. Primary factors that were considered during the selection process were taken from the Project Specifications (see \secref{performance}) and the Project Scope (see \secref{projectScope}). The following list outlines the criterion used during the process and the decision matrix (\figref{platformDecision}).
 \begin{itemize}
 \item Cost: Based on a budget of \$16,500. A platform cost nearing \$5,000 indicated that the requirement had been met. A score of 10 indicates platform supplied in-kind and 1 indicates financially infeasible.
 \item Implementation of Auto-Control: How involved the process of implementing the direct hardware required for remote operation would be. A low score indicates a difficult process with many sub-systems, whereas a high score indicates little to no work necessary. Requirement was met if implementation of hardware was a feasible task.
@@ -14,7 +16,6 @@ A platform is used as a means to mount the required detection equipment and to a
 \item Payload: Platform's ability to support the required 100 kg payload.
 \item Terrain Traversing: How capable the platform is at traversing the required terrain. This includes dry and loose sand or gravel with minimum obstacles and a 15 degree gradient.
 \item Portability: Level of portability. A higher score indicates simpler transport with less disassembly required. The requirement had been satisfied if transport was possible in the back of a ute or trailer.
-\item Operation Time: {\color{red}{need something here, i dont think theres anything in requirements for it yet}}
 \item Navigation: How direct and efficient the path of the platform for mine-detecting purposes was expected to be. This involves aspects such as duration and tightness of turns and mine avoidance techniques.
 \end{itemize}
 
@@ -24,9 +25,30 @@ A platform is used as a means to mount the required detection equipment and to a
 \caption{Platform Decision Matrix} \figlabel{platformDecision}
 \end{figure}
 
-\Figref{platformDecision} summarises each of the \sout{available}\textcolor{green}{considered} platforms which are detailed further in following subsections. If a criterion is met with a score of 5 or higher it is coloured green, otherwise the colour transitions to red - a score of 1. \textcolor{green}{This color scale seems awfully arbitrary. Why max out at 5? It's a pretty small detail to get nitpicky over but I don't think the chart is as clear as it could be.} It was evident that the hovercraft did not meet majority of the requirements to be the supporting platform. Commercial quad bikes, small cars, or dune buggies could have been used with some modifications to the structure, however a tracked vehicle or the quad bike offered by DSTG were clearly the two best options.
+\Figref{platformDecision} summarises each of the considered platforms which are detailed further in following subsections. A score of 5 indicated that a requirement had been satisfied or that the criterion was only just feasible for that platform, with any difference being representative of a rise or fall in the platforms specified capability. Scores had a lower limit of 1 and an upper limit of 10. If a criterion was met with a score of 5 or higher it was coloured green, otherwise the colour transitioned to red - a score of 1. 
+\textcolor{green}{This color scale seems awfully arbitrary. Why max out at 5? It's a pretty small detail to get nitpicky over but I don't think the chart is as clear as it could be.} It was evident that the hovercraft did not meet majority of the requirements to be the supporting platform. Commercial quad bikes, small cars, or dune buggies could have been used with some modifications to the structure, however a tracked vehicle or the quad bike offered by DSTG were clearly the two best options.
 
 The DSTG quad bike was selected over a tracked vehicle for a number of reasons. These included direct availability, financial restrictions, and the completed state of auto control hardware already on the quad bike.
+
+\subsection{Utility Quad Bike}
+Quad bikes are designed as all terrain vehicles and are capable of traversing even the most demanding terrains. Utility quad bikes are intended to carry large loads as well as a human operator and so load limits are frequently larger than 100 kg. Due to the nature of the platform and through visual inspection, mounting points for sensor brackets and electronic systems are located in various positions.  Environmental conditions are of little concern to this platform which will be encountered and traversed with ease for ranges of over 100 km. Turning radius for quad bikes are typically in the range of 3-4 metres.
+The DSTG have offered the use of one of their autonomous quad bikes to be used as the platform. The DSTG quad bike is a Honda TRX450r and has a weight load capacity of 110 kg. The quad bike has been previously fitted with remote control capabilities and is in good working condition, however \textcite{scheiner2011} recommended that the brake actuator be replaced as well as some electronics. As the platform already has remote control capabilities, transport becomes a much easier task especially with a trailer or ute with a ramp.
+\begin{figure}[ht]
+\includegraphics[width=0.4\textwidth]{4-ConceptDesign/2011quadbike.PNG}
+\centering
+\caption[DSTG Autonomous Quad Bike]{DSTG Autonomous Quad Bike \parencite{scheiner2011}} \figlabel{2011quadbike}
+\end{figure}
+
+\subsection{Dune Buggy}
+turn radii frequently around 30 feet.
+
+\subsection{Continuous Tracked Vehicle}
+Tracked vehicles are designed to distribute the weight of the vehicle over a large area enabling the traversing of soft and loose terrain without the concern of losing traction and becoming stuck. The platform shown in \figref{grillon500} is one example of such a vehicle. The Grillon-500 is able to carry a payload of 1000 kg and operate at speeds up to 11 km/hr however a bare mass of 100 kg and dimensions of 1.5 m by 2.5 m could make the unit difficult to transport \parencite{cinamGrillon}. This model is designed to support the mounting of various equipment in the front bay (fork lift pictured). An advantage of the tracked vehicle over other platforms is its ability to turn on the spot eliminating the need for complicated turn algorithms. 
+\begin{figure}[ht]
+\includegraphics[width=0.4\textwidth]{4-ConceptDesign/Grillon-500.jpg}
+\centering
+\caption[Example of tracked vehicle - Grillon-500]{Example of tracked vehicle - Grillon-500 \parencite{cinamGrillon}} \figlabel{grillon500}
+\end{figure}
 
 \subsection{Hovercraft}
 Access was made available to an existing hovercraft from a 2009 Adelaide University Honours Project. Analysis of the technical report \parencite{hovercraft2009} and practical and theoretical evaluations showed that the lift fan was able to support a payload of up to 22 kg and the thrust fans were only just capable of moving the craft on a flat, smooth surface. For complete automation only actuators for the lift motor would be required as remote operation for the thrust system had already been implemented. The stopping distance is lacking due to the time required to rotate fans for reverse thrust. The hovercraft has an advantage over other platforms through its ability to pass directly over a mine without detonation occurring, however, this 'sliding' advantage introduces new problems when developing a path tracking algorithm due to the advanced dynamics of the platform. The purchasing of a recreational hovercraft more suited to the requirements would not have been financially feasible. Through verbal discussion with DSTG, it was revealed that vibrations produced through the lift and thrust systems on hovercraft platforms were detrimental to the effectiveness of the sensor equipment. Thus, the DSTG has advised against the use of a hovercraft as the platform for mine-detecting purposes.
@@ -36,40 +58,27 @@ Access was made available to an existing hovercraft from a 2009 Adelaide Univers
 \caption[2009 Adelaide University Honours Project Hovercraft]{2009 Adelaide University Honours Project Hovercraft \parencite{hovercraft2009}} \figlabel{hovercraftPic}
 \end{figure}
 
-\subsection{Quad Bike}
-Quad bikes are designed as all terrain vehicles and are capable of traversing even the most demanding terrains. Utility quad bikes are intended to carry large loads as well as a human operator and so load limits are frequently larger than 100 kg. Due to the nature of the platform and through visual inspection, mounting points for sensor brackets and electronic systems are located in various positions.  Environmental conditions are of little concern to this platform which will be encountered and traversed with ease for ranges of over 100 km. Turning radius for quad bikes are typically in the range of 3-4 metres.
-The DSTG have offered the use of one of their autonomous quad bikes to be used as the platform. The DSTG quad bike is a Honda TRX450r and has a weight load capacity of 110 kg. The quad bike has been previously fitted with remote control capabilities and is in good working condition, however \textcite{scheiner2011} recommended that the brake actuator be replaced as well as some electronics. As the platform already has remote control capabilities, transport becomes a much easier task especially with a trailer or ute with a ramp.
-\begin{figure}[ht]
-\includegraphics[width=0.4\textwidth]{4-ConceptDesign/2011quadbike.PNG}
-\centering
-\caption[DSTG Autonomous Quad Bike]{DSTG Autonomous Quad Bike \parencite{scheiner2011}} \figlabel{2011quadbike}
-\end{figure}
-
-\subsection{Small Car ?}
-turn radius' of around 30 feet.
-
-\subsection{Dune Buggy ?}
-
-\subsection{Tracked Vehicle}
-
 \section{Navigation}
 The navigation system is responsible for communicating to the quad bike two primary functions, how to follow a low curvature path and how to turn a specified angle. Platform navigation will be primarily handled via waypoints. After a region is selected by a user it is broken down into a series of waypoints which, once connected, will form a path for the quad bike. In the alternate use case, the navigation system will operate based directly on waypoints created from a user defined path.
 \subsection{Path Tracking}
-\Textcite{snider2009} provides an empirical comparison of path following algorithms and is shown in \figref{trackingComparison}. Tracking Methods are ordered by implementation difficulty from least difficult to most difficult.\\
-\textcolor{red}{This figure 4.4 one is an issue since the writing is smaller than our font. Either find a new comparison or redo it with larger text or better colours... :/}
+As the platform will primarily be following straight lines the navigation system will define the path using a 'piecewise linear path' discussed in \secref{pathTrackingLitReview} for simplicity.
+\Textcite{snider2009} provides an empirical comparison of path following algorithms and is shown in \figref{trackingComparison}. Tracking Methods are ordered by implementation difficulty from least difficult to most difficult.
 \begin{figure}[ht]
 \includegraphics[width = \textwidth]{4-ConceptDesign/pathTrackingSummary2.png}
 \centering
-\caption{Empirical Comparison of Path Tracking Algorithms \parencite{snider2009}} \figlabel{trackingComparison}
+\caption[Empirical Comparison of Path Tracking Algorithms]{Empirical Comparison of Path Tracking Algorithms \parencite{snider2009}} \figlabel{trackingComparison}
 \end{figure}
+
 \subsection{Turning the Platform a Specified Angle}
 At the end of a swathe the platform will be required to turn a specified angle within a small area defined by the width of the sensing arrays. Alternatively, if the scan history is available to the platform in the form of a map a larger area may be available to conduct the turn. Due to little or no literature on the unique topic an adaptation of the simplified Ackermann model and path tracking algorithms will be used to achieve the turn.
 
+\section{Platform Automation}
+\seclabel{automationconcept}
+\textcolor{red}{Need to provide some PID control block diagram and/or flow charts for concept design of the automation of the platform. Include what has been discussed in previous meetings.}
+
 \section{Signal Processing}
 \seclabel{signalconcept}
-\textcolor{red}{Jono, might be good to cover this section for some of the concept designs for the code}
-
-As noted in \secref{gpr}, the detection depth and resolution are generally fixed parameters of the transmitting and receiving antennas of the physical device. The signal processing software will be designed to operate effectively on the hardware available, which is the GPR unit supplied to the project courtesy of the DSTG. The model supplied is a single GPR (non-array) unit with three interchangeable antennas which allow the selection of transmission and receiving frequency. The three heads supplied are:
+As noted in \secref{gpr}, the detection depth and resolution are generally fixed parameters of the transmitting and receiving antennas of the physical device. The signal processing software will be designed to operate effectively on the hardware available, which is the GPR unit supplied to the project courtesy of the DSTG \textcolor{red}{we seem to mention that the DSTG gave the unit to us every time the GPR is mentioned. need to figure out where we DO and DONT bring this up, is it really important who gave it to us in this section?} \textcolor{green}{It's important to mention that we didn't select one because otherwise we need to come up with some concept design to explain why we chose the one we did. We weren't given the option to do any concept design work to decide upon our GPR, so its important to mention that it was supplied and we get what we were given}. The model supplied is a single GPR (non-array) unit with three interchangeable antennas which allow the selection of transmission and receiving frequency. The three heads supplied are:
 \begin{itemize}
 \item 800 MHz
 \item 1.4 GHz
@@ -88,8 +97,10 @@ The decision-level sensor fusion becomes more accurate with more decision metric
 \end{itemize}
 Each individual determination of likelihood that an object can be classified as a mine will be based around an individual scan's similarity to a training data set, produced from testing data. The final determination of the likelihood that an object is a mine will be based upon a linear weighting of the three metrics, offset by the relative confidence in each decision metric. Time permitting, the training data sets and the weighting coefficients will be generated from the output of an artificial intelligence machine learning algorithm based on decision trees, neural networks or fuzzy logic. Initially the trained data sets and weighting coefficients will be manually trained by inspection.
 
+\textcolor{red}{Should we include a flow chart of the signal preprocessing done from your code Jono or should that go down in the Conceptual project design? - RP}
+
 \section{Electronics}
-\textcolor{green}{You remember how I definitely said that if anyone copied a whole paragraph from the previous report then they deserved a kicking? Well I straight up copied this entire section. Fight me.}
+\textcolor{green}{You remember how I definitely said that if anyone copied a whole paragraph from the previous report then they deserved a kicking? Well I straight up copied this entire section.}
 
 Requirements for the electronics subsystems can be inferred from the project aims. As a major component of the project would be attempting advanced signal processing methods in real time, significant processing capabilities will be required on the mobile platform. In addition to this, the signal processing must be capable of running simultaneously with a number of other platform software systems, such as vehicle control and telemetry. To achieve this without requiring multiple discrete hardware components (which would require communications input/output (I/O) interfaces to share data), a single hardware system capable of executing multiple threads simultaneously and asynchronously is required on the vehicle. The hardware system executing the signal processing software must also be capable of reading sensory input from USB devices, as this is the communications format available on the GPR units provided by the DTSG. 
 \nomenclature[A]{I/O}{Input/Output}% 
@@ -117,8 +128,10 @@ None of the individual items presented allow for the full range of requirements 
 Under this system, the project will use standard desktop computing equipment for the bulk of the software, to make use of its superior processing power and the rapid development it allows. This device will be the data handler and processor, and act as the 'central' software location for the project. Sensors and actuators that require low level I/O access will be connected to a secondary microcontroller, which will act independently to buffer inputs and outputs of the system, which can then be communicated to the primary computer over a serial communications connection. The project will not aim to develop any custom electronics boards and handle all signal amplification or processing in software.
 
 \section{Sensor Mount}
+\seclabel{sensormount}
 
 \section{Conceptual Project Design}
 \textcolor{green}{CONCEPTUAL DESIGN SHOULD FINISH WITH A DESIGN. WHERE IS IT? <-- straight from the maz's mouth. Need some top level diagrams, flowcharts and shit down here to tie together the entire project}
+
 
 \end{document}

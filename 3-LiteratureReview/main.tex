@@ -3,7 +3,10 @@
 \begin{document}
 \chapter{Literature Review}
 \chaplabel{literatureReview}
+\textcolor{red}{Need a paragraph to introduce the lit review chapter, why we are doing a lit review and what it will cover}
+
 \section{Signal Processing}
+\seclabel{splitreview}
 %Implementation of autonomous detection and classification of subsurface objects, with a focus on identifying objects with a high likelihood of being a landmine. interpretation of the output signals from the GPR and metal detector will be processed with the aim to identify and confirm with a percentage the likelihood of a threat. Supplied data sets will be used to create and tune a detection algorithm to meet this goal, and operational trials will be conducted to test the effectiveness of the developed system.
 % 
 \subsection{Ground Penetrating Radar for mine detection}
@@ -18,7 +21,7 @@ Wideband frequency coverage is a radar scanning strategy which can be used to ac
 A limitation restricting the application of GPR technology for the purposes of UXO scanning is the small search area. The detection of subsurface objects is effectively limited to objects situated between the transmitting and receiving antennas, which in practice must be only a small distance apart due to signal attenuation. This prevents the scanning of wide fields by placing the antennas a wide distance apart. Iterative scanning must be employed to cover a zone, and with a small scan width this requires a great number of scans.
 
 \textcolor{green}{After re-reading i get what you meant rac about this being close to benchmarking. I've removed any mention of this being an actual commercial device and focused on the important parts to make it more literature review appropriate. --}
-The limitation of a single radar scanline has been overcome with the use of an array of transmitting and receiving antennas combined into a single scanning device. Under this arrangement the series of transmitting and receiving antennas are displaced laterally from each other along the length of the device, as shown in \figref{arraylayout}. The application of multiple transmitting and receiving pairs allows for a single pass to scan a significant width, limited only by the number of transmitting and receiving pairs \parencite{3dradarDX}. The proximity of the transmitting pairs also allows for the signal difference at the receiving antennas to be interpreted from multiple transmitters - greatly increasing the fidelity of the scan. The effective sensing locations realised by pairing each receive antenna to two transmitting antennas are shown as red dots in \figref{arraylayout}.
+The limitation of a single radar scanline has been overcome with the use of an array of transmitting and receiving antennas combined into a single scanning device. Under this arrangement the series of transmitting and receiving antennas are displaced laterally from each other along the length of the device, as shown in \figref{arraylayout}. The application of multiple transmitting and receiving pairs allows for a single pass to scan a significant width, limited only by the number of transmitting and receiving pairs \parencite{3dradarDX}. The proximity of the transmitting pairs also allows for the signal difference at the receiving antennas to be interpreted from multiple transmitters - greatly increasing the fidelity of the scan. The effective sensing locations by pairing each receive antenna to two transmitting antennas are shown as red dots in \figref{arraylayout}.
 \begin{figure}[ht]
 \includegraphics[width=0.8\textwidth]{3-LiteratureReview/3d-radar.png}
 \centering
@@ -62,12 +65,7 @@ This signature is capable of uniquely identifying an object type (to a certain d
 \end{figure}
 The signature method has a notable failure point where the presence of a metallic non-mine object situated immediately next to a mine can interfere with the signature of the received sample, reducing the likelihood that a correct identification will be made. This is particularly problematic where large metallic objects can completely obscure the signature of smaller objects. As a result, this technique is limited to situations in which metallic contamination is sparse, or metallic objects are typically an order of magnitude smaller than the objects of interest \parencite{Kruger2006}.
 
-
-
-
-
-\subsection{\textit{Chellanges in combination of GPR and MD signals}}
-\textcolor{green}{Really? whoever was coming up with these section headings is fucking terrible at it.}
+\subsection{Application of multiple sensors in mine detection}
 The wide range of potential materials, shapes and burial depths of dangerous underground objects and the constraints of sensing technologies means that single sensor based systems are limited in their detection capacity \parencite{Yarovoy2009}. Combination sensing allows access to a wider gamut of information about a particular subsurface object, allowing detection of a wider range of objects and heightened confidence in the detection rate of mines and IEDs. Two potential configurations exist - where a single sensor is used as a primary detector with confirmation provided by secondary sensor, and where both sensors are used concurrently and information from both detectors is processed simultaneously. Mutual processing of the data from both sensors is called sensor fusion. A common distinction is made between potential levels of sensor fusion \parencite{Yarovoy2009}:
 \begin{itemize}
 \item \textbf{Decision-level fusion:} information from the sensors is evaluated individually and a decision is made (mine or non-mine) for each sensor. Confidence in the sensor's independent decision is compared against the decision vector to produce a final determination.
@@ -76,35 +74,31 @@ The wide range of potential materials, shapes and burial depths of dangerous und
 \end{itemize}
 Features are linked between sensors by associating samples across multiple sensors, generally by proximity. Features detected by different sensors within a certain threshold distance of each other are associated and considered as the same feature. Each progressive step down from decision-level fusion requires significantly greater computational processing, and greater knowledge of the sensor dynamics and the correlations of signal features to real-world object parameters \parencite{Yarovoy2009}. Higher level fusion strategies lend themselves well to machine learning techniques, which can be naive to the sensor mechanics and produce correlations based on learned sample data sets computationally cheaply. Experimental trials suggest that all forms of sensor fusion are capable of producing significantly more accurate detection results with far fewer false-positive incidents than single sensor systems \parencite{Yarovoy2009}.
 
-\textcolor{blue}{I've got some stuff to go into here. Basically will be combining the two above.}
-
-\section{Navigation}
-\subsection{PID control}
+\section{Navigation and Automation}
+\seclabel{navigationandautomation}
+\subsection{Autonomous control of the quad bike}
 \textcolor{green}{I wanted to chuck something in here about PID control cos thats what we're gonna be using to control the vehicle from the waypoints. We may not end up having word count spare but if we do i think a bit of background here won't go astray.}
 
-
+\subsection{Path Tracking}
+\seclabel{pathTrackingLitReview}
+Path tracking uses location information from a GPS or some other positioning system to guide a vehicle along a pre-defined course. In theory the path can be defined as a continuous function but this is inefficient in practice. Instead, a path is discretised and defined by a series of points, called waypoints (shown in \figref{pathDefining}). A path can either be described as lines connecting the waypoints or as a series of closely spaced waypoints. Due to the implementation of path tracking systems on digital devices the path description will be discretised at some point and so the definition has no impact on the application of the methods described below \parencite{Giesbrecht2005}.
 \begin{figure}[ht]
-\includegraphics[width=0.8\textwidth]{3-LiteratureReview/pathDefining.png}
+\includegraphics[width=0.9\textwidth]{3-LiteratureReview/pathDefining.png}
 \centering
 \caption[Various ways to define a path]{Various ways to define a path \parencite{Giesbrecht2005}} \figlabel{pathDefining}
 \end{figure}
 
-\subsection{Defining a Path Based on a Region}
-\textbf{\color{red}{JONO CAN YOU TALK ABOUT DIFFERENT METHODS DO DEFINE A PATH BASED ON A REGION HERE, or maybe we dont even need to mention it, put in detailed design?}} \textcolor{green}{I think just chuck it into detail design. Maybe mention that we intend to have some form of zone/path generation in the concept section, but put the bulk in concept. Nothing I did is really based on literature work anyway because its not that complicated. Its also not the primary focus of the 'navigation' section so i think it can be omitted.}
-
-\subsection{Path Tracking}
-\textcolor{green}{i think this deserves some sort of intro here. No going straight from subsection to subsubsection. (I know i did it just before in the previous chapter. fight me)}
 \subsubsection{Geometric Path Tracking}
 Geometric path tracking uses geometric relationships between a vehicle and a path to produce a control algorithm as a solution to the problem. Theories assume vehicles use the Ackermann method for steering so a simplified steering model can be used for the geometry. This reveals a relationship between the steering angle and the curvature that the non steering wheels will follow. Two of the most commonly used geometric vehicle models are Pure Pursuit and the Stanley Method \parencite{snider2009}.
 
-Pure Pursuit uses a path 'look-ahead' distance to measure the future error between the vehicle and the path in real time which can then be steered to and corrected for. \Figref{purePursuitGeom} shows the geometry associated with Pure Pursuit at one point in time. It shows a goal point $(g_x, g_y)$ on the desired path at specified look-ahead distance $l_d$ in front of the vehicle. The steer angle is calculated based on an arc that would connect the centre of the non-steering axle to the goal point. When high curvatures are present in a path the controller may begin to cut corners due to a look-ahead distance that would effectively skip this portion of the path. Lateral error on a path of constant curvature may also be experienced due to geometric controller characteristics which do not take into account the curvature of a path. However, Pure Pursuit provides a very robust tracking algorithm when discontinuous curvatures are present \parencite{snider2009}. In general, for more accurate tracking a short look-ahead distance should be used but will eventually result in oscillation, for smoother tracking a long look-ahead distance should be used but this will reduce precision \parencite{snider2009}.
+Pure Pursuit uses a path 'look-ahead' distance to measure the future error between the vehicle and the path in real time which can then be steered to and corrected for. \Figref{purePursuitGeom} shows the geometry associated with Pure Pursuit at one point in time. It shows a goal point $(g_x, g_y)$ on the desired path at a specified look-ahead distance $l_d$ in front of the vehicle. The steer angle is calculated based on an arc that would connect the centre of the non-steering axle to the goal point. The calculation of the goal point is effectively adding a waypoint to the path at that point. When high curvatures are present in a path the controller may begin to cut corners due to a look-ahead distance that would effectively skip this portion of the path. Lateral error on a path of constant curvature may also be experienced due to geometric controller characteristics which do not take into account the curvature of a path. However, Pure Pursuit provides a very robust tracking algorithm when discontinuous curvatures are present \parencite{snider2009}. In general, for more accurate tracking a short look-ahead distance should be used but will eventually result in oscillation, for smoother tracking a long look-ahead distance should be used but this will reduce precision \parencite{snider2009}.
 \begin{figure}[ht]
 \includegraphics[width=0.6\textwidth]{3-LiteratureReview/purePursuitGoal.png}
 \centering
 \caption[Pure Pursuit Geometry]{Pure Pursuit Geometry \parencite{snider2009}} \figlabel{purePursuitGeom}
 \end{figure}
 
-The Stanley Model uses the lateral error between the centre of the wheels axle and the nearest path point  to determine steer angle (\figref{stanleyGeom}). It is simply set to the heading error which is given as the difference between the vehicles heading and the instantaneous heading of the nearest point on the path, $\theta_e$. An extra term is used when the lateral error is non zero which amplifies the steer angle to a new value of $\delta$.  This gives an effect so that as the error increases, or as the vehicle strays further from the path, the wheels are steered further towards the path in an attempt to correct. The Stanley Method is very well suited to higher speed tracking but can run into problems when curvature discontinuities are present in the path.
+The Stanley Model uses the lateral error between the centre of a wheels axle and the nearest path point  to determine steer angle (\figref{stanleyGeom}). It is simply set to the heading error which is given as the difference between the vehicles heading and the instantaneous heading of the nearest point on the path, $\theta_e$. An extra term is used when the lateral error is non zero which amplifies the steer angle to a new value of $\delta$.  This gives an effect so that as the error increases, or as the vehicle strays further from the path, the wheels steering angle is amplified in an attempt to correct for this error. The Stanley Method is very well suited to higher speed tracking but can run into problems when curvature discontinuities are present in the path.
 \begin{figure}[ht]
 \includegraphics[width=0.5\textwidth]{3-LiteratureReview/stanleyMethod.png}
 \centering
@@ -117,9 +111,38 @@ Some limitations of geometric path tracking methods are related to the dynamics 
 The kinematic model collapses a four wheeled vehicle into a two wheeled model, much like the geometric path tracking approach. The equations of motion for the simplified system are then used to relate the vehicle speed, change in heading error and change in lateral error to a user defined velocity and steer angle in path coordinates. In practice, the same trade off between performance and stability is apparent as in the geometric models, accurate tracking at low speeds but problems due to neglected dynamics at high speeds \parencite{snider2009}. This method is not as robust as Pure Pursuit and displays a similar behaviour to the Stanley Method when discontinuities in curvature are present.
 
 \subsubsection{Dynamic Path Tracking}
-A dynamic model approximates the real dynamics of a vehicle which was one of the downfalls of the previous examples. Similar to the kinematic model, the vehicle speed, heading error and lateral error are related to a user defined velocity and steer angle in path coordinates. Even though the dynamics of the vehicle are included in this model, extreme path dynamics can have as much of an effect on the efficiency of the path tracking \parencite{snider2009}. Discontinuities in the path still have a noticeable effect on accuracy and the steady state lateral error is still present. However, in a more realistic scenario a dynamic path tracking method does show overall improvement \parencite{snider2009}.
+A dynamic model approximates the real dynamics of a vehicle which was one of the downfalls of the previous examples. Similar to the kinematic model, the vehicle speed, heading error and lateral error are related to a user defined velocity and steer angle in path coordinates. Even though the dynamics of the vehicle are included in this model, extreme path dynamics such as large changes in curvature can have as much of an effect on the efficiency of the path tracking as before\parencite{snider2009}. Discontinuities in the path still have a noticeable effect on accuracy and the steady state lateral error is still present. However, in a more realistic scenario a dynamic path tracking method does show overall improvement \parencite{snider2009}.
 
 \subsection{Turning the Platform a Specified Angle}
-stuff on radial tolerances and subgoal obsession.
+In a path similar to that described by the piecewise linear definition, a turn can be moderately controlled by introducing a variable called the radial tolerance \parencite{Giesbrecht2005}. The radial tolerance describes the distance from the waypoint at which the system considers that waypoint 'reached', ultimately changing the point at which the platform will begin the turn towards the proceeding waypoint. If the radial tolerance is set too large the platform will begin the turn early resulting in poor path tracking. If the radial tolerance is set too small the platform will overshoot the desired path due to unaccounted vehicle dynamics and/or restrictions in steering angle. \Figref{waypointTolerances} shows examples of a radial tolerance set slightly too low (1 metre) in blue and more realistically in grey (6 metres) for a vehicle following the path in red with a turn radius of 4 metres. It is easily visible that both methods are unable to follow the desired path with perfect precision due to real vehicle dynamics.
+
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{3-LiteratureReview/waypointTolerances.PNG}
+\centering
+\caption[Effect of Waypoint Tolerances on Path Tracking]{Effect of Waypoint Tolerances on Path Tracking \parencite{Giesbrecht2005}} \figlabel{waypointTolerances}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
