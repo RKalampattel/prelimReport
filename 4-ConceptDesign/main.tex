@@ -19,13 +19,32 @@ A platform is used as a means to mount the required detection equipment and to a
 \item Navigation: How direct and efficient the path of the platform for mine-detecting purposes was expected to be. This involves aspects such as duration and tightness of turns and mine avoidance techniques.
 \end{itemize}
 
+\begin{table}[h]
+\centering
+\caption{Platform decision matrix}
+\tablabel{platformDecision}
+\begin{tabular}{r *6c}
+    \multicolumn{1}{r}{}  & \mcrot{1}{l}{45}{Hovercraft (2009)} & \mcrot{1}{l}{45}{Quad Bike (Second Hand)} & \mcrot{1}{l}{45}{Small Car} & \mcrot{1}{l}{45}{Dune Buggy} & \mcrot{1}{l}{45}{Tracked Vehicle} & \mcrot{1}{l}{45}{Quad Bike (DSTG)}\\ \toprule 
+    Unit Cost & 10 & 5 & 4 & 3 & 4 & 10\\ 
+    Implementation of Auto Control & 5 & 3 & 3 & 3 & 5 & 9\\ 
+    Control/Manoeuvrability & 3 & 7 & 4 & 5 & 9 & 7\\ 
+    Implementation of Detection Equipment & 1 & 6 & 5 & 6 & 5 & 6\\ 
+    Payload & 2 & 8 & 10 & 10 & 7 & 7\\ 
+    Terrain Traversibility & 3 & 9 & 5 & 7 & 10 & 9\\ 
+    Portability & 7 & 6 & 3 & 4 & 8 & 6\\ 
+    Operational Time & 3 & 9 & 9 & 9 & 6 & 9\\
+    Navigation & 9 & 5 & 3 & 4 & 7 & 5\\ \midrule
+    \textbf{Total} & 48\% & 64\% & 51\% & 57\% & 68\% & 76\%\\ \bottomrule
+\end{tabular}
+\end{table}
+
 \begin{figure}[ht]
 \includegraphics{4-ConceptDesign/platformDecision.png}
 \centering
 \caption{Platform Decision Matrix} \figlabel{platformDecision}
 \end{figure}
 
-\Figref{platformDecision} summarises each of the considered platforms which are detailed further in following subsections. A score of 5 indicated that a requirement had been satisfied or that the criterion was only just feasible for that platform, with any difference being representative of a rise or fall in the platforms specified capability. Scores had a lower limit of 1 and an upper limit of 10. If a criterion was met with a score of 5 or higher it was coloured green, otherwise the colour transitioned to red - a score of 1. 
+\Figref{platformDecision} \textcolor{red}{I feel as though this is in the wrong spot, we cant decide on the platfrom without discussing them first, or even introducing them} summarises each of the considered platforms which are detailed further in following subsections. A score of 5 indicated that a requirement had been satisfied or that the criterion was only just feasible for that platform, with any difference being representative of a rise or fall in the platforms specified capability. Scores had a lower limit of 1 and an upper limit of 10. If a criterion was met with a score of 5 or higher it was coloured green, otherwise the colour transitioned to red - a score of 1. 
 \textcolor{green}{This color scale seems awfully arbitrary. Why max out at 5? It's a pretty small detail to get nitpicky over but I don't think the chart is as clear as it could be.} It was evident that the hovercraft did not meet majority of the requirements to be the supporting platform. Commercial quad bikes, small cars, or dune buggies could have been used with some modifications to the structure, however a tracked vehicle or the quad bike offered by DSTG were clearly the two best options.
 
 The DSTG quad bike was selected over a tracked vehicle for a number of reasons. These included direct availability, financial restrictions, and the completed state of auto control hardware already on the quad bike.
@@ -75,6 +94,7 @@ At the end of a swathe the platform will be required to turn a specified angle w
 \section{Platform Automation}
 \seclabel{automationconcept}
 \textcolor{red}{Need to provide some PID control block diagram and/or flow charts for concept design of the automation of the platform. Include what has been discussed in previous meetings.}
+\textcolor{blue}{Got some stuff to go in here, like flow charts/stuff "code plan", will try and see about a PID block diagram process - RP}
 
 \section{Signal Processing}
 \seclabel{signalconcept}
@@ -98,6 +118,21 @@ The decision-level sensor fusion becomes more accurate with more decision metric
 Each individual determination of likelihood that an object can be classified as a mine will be based around an individual scan's similarity to a training data set, produced from testing data. The final determination of the likelihood that an object is a mine will be based upon a linear weighting of the three metrics, offset by the relative confidence in each decision metric. Time permitting, the training data sets and the weighting coefficients will be generated from the output of an artificial intelligence machine learning algorithm based on decision trees, neural networks or fuzzy logic. Initially the trained data sets and weighting coefficients will be manually trained by inspection.
 
 \textcolor{red}{Should we include a flow chart of the signal preprocessing done from your code Jono or should that go down in the Conceptual project design? - RP}
+
+% Signal processing table 
+\begin{table}[ht]
+\centering
+\caption{\textcolor{red}{Still changing values/deciding}Signal processing selection matrix}
+\tablabel{signalmatrix}
+\begin{tabular}{r *4c}
+    \multicolumn{1}{r}{}  & \mcrot{1}{l}{45}{\textbf{Normalisation}} & \mcrot{1}{l}{45}{\textbf{Digital filter}} & \mcrot{1}{l}{45}{\textbf{Inverse-platform}} & \mcrot{1}{l}{45}{\textbf{Fibreglass}}\\ \toprule 
+    Quality of clutter removal & 10 & 1 & 10 & 3 \\ 
+   Processing & 10 & 1 & 5 & 3 \\ 
+    Ease of application & 10 & 4 & 8 & 5 \\ 
+    Programming language& 10 & 2 & 10 & 6 \\ \midrule
+    \textbf{Total} & 92\% & 32\% & 78\% & 57\% \\ \bottomrule
+\end{tabular}
+\end{table}
 
 \section{Electronics}
 \textcolor{green}{You remember how I definitely said that if anyone copied a whole paragraph from the previous report then they deserved a kicking? Well I straight up copied this entire section.}
@@ -129,9 +164,60 @@ Under this system, the project will use standard desktop computing equipment for
 
 \section{Sensor Mount}
 \seclabel{sensormount}
+The sensor mount is required to support the weight of both the GPR and the metal detector as well as be sturdy enough to prevent flexing or warping during operation. The following section describes the basic requirements imposed on the mount.  
+\subsection {Sensor requirements } 
+The design of the mount must satisfy the performance requirements of each sensor. These include the sensors operating height off the ground and their optimal operating distance from other objects to prevent interference. 
 
+Both the GPR and metal detector must operate horizontally and within close proximity to the ground to ensure no erroneous data.
+For minimal ground reflections and interferences, the GPR should operate as close to the ground as possible. Optimal operating conditions for the GPR requires ground contact to trigger the scroll wheel switch. Sensitivity tests to objects above and beside the GPR resulted in little interference. Objects above 50mm had no impact on the data as well as objects 100mm beside it. 
+
+The metal detector is more sensitive to metallic objects above and beside it. A stand-off distance for metallic objects of 500mm is required as well as a vertical stand-off distance of 2 meters. To reduce size, the GPR will be closest to the platform with the metal detector in front, allowing for the required stand-off distance.  
+\subsection {Material selection}  
+Material selection plays a large role in the design for the mount depending largely on the sensor requirements, ease of material sourcing, working and repairing. Non metal structures are required due to the metal detector. Possible material choices include PVC piping, carbon fibre, wood and fibreglass. The selection matrix shown in \figref{Sensormountmaterials} represents decision matrix used to determine the material for the mount.
+\begin{figure}[ht]
+\includegraphics[width = .5\textwidth]{4-ConceptDesign/Selection_criteria_materials.png}
+\centering
+\caption{Sensor mount material selection matrix} \figlabel{Sensormountmaterials}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Sensor mount material selection matrix}
+\tablabel{sensorMountMaterials}
+\begin{tabular}{r *4c}
+    \multicolumn{1}{r}{}  & \mcrot{1}{l}{45}{\textbf{PVC}} & \mcrot{1}{l}{45}{\textbf{Carbon Fibre}} & \mcrot{1}{l}{45}{\textbf{Wood}} & \mcrot{1}{l}{45}{\textbf{Fibreglass}}\\ \toprule 
+    Cost & 10 & 1 & 10 & 3 \\ 
+    Ease of manufacture & 10 & 1 & 5 & 3 \\ 
+    Ease of repair & 10 & 4 & 8 & 5 \\ 
+    Ease to source & 10 & 2 & 10 & 6 \\ 
+    Time to build & 10 & 1 & 8 & 10 \\ 
+    Strength & 5 & 10 & 6 & 7 \\ \midrule
+    \textbf{Total} & 92\% & 32\% & 78\% & 57\% \\ \bottomrule
+\end{tabular}
+\end{table}
+
+PVC scored the highest due to its low cost, ease to modify and assemble. However, it is not the strongest material and could flex during operation depending on the length.
+Carbon fibre is the strongest material but the cost and hardships associated with it resulted in the lowest score.
+Wood is the second highest but the joining of sections without nails would result in weaker joins.
+Fibreglass scored in the middle primarily due to the cost and difficulties to manufacture. 
+\subsection{Sensor mount design}
+Basic design for the sensor mount can be realised with the sensor requirements. However, detailed design is heavily dependent on the chosen platform. Using the DSTG Quad bike as the chosen platform, preliminary designs can be sketched. Design 1, 2 and 3 trial different mounting techniques and frame designs. 
+
+\textcolor{red}{pictures of different mounts}
+\subsubsection{Design 1}
+
+\subsubsection{Design 2}
+
+\subsubsection{Design 3}
+  
 \section{Conceptual Project Design}
 \textcolor{green}{CONCEPTUAL DESIGN SHOULD FINISH WITH A DESIGN. WHERE IS IT? <-- straight from the maz's mouth. Need some top level diagrams, flowcharts and shit down here to tie together the entire project}
 
+
+\begin{figure}[ht]
+\includegraphics[width = 0.6\textwidth]{4-ConceptDesign/SP_flowchart.png}
+\centering
+\caption{\textcolor{red}{Testing to see if this works } Signal processing flow chart} \figlabel{signalflowchart}
+\end{figure}
 
 \end{document}

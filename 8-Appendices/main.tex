@@ -10,11 +10,118 @@
 \chaplabel{ganttChart}
 \textcolor{red}{In \Chapref{ganttChart}, we have a Gantt Chart.}
 
-\chapter{Risk Management - need more specific title}
-\chaplabel{riskManagementApp}
+\chapter{Risks of Project Failure}
+\chaplabel{riskFailureApp}
+\textcolor{red}{Don't forget to add some text explaining what is in this appendix}
 
-\chapter{Budget - need more specific title}
+\begin{table}[ht]
+\caption{Risk matrix} \tablabel{riskmatrix}
+\begin{tabular}{C{0.22\textwidth} C{0.22\textwidth} C{0.22\textwidth} C{0.22\textwidth}}
+\toprule
+\multicolumn{1}{c}{} & \multicolumn{3}{c}{\textbf{Impact}}\\ \cmidrule{2-4}
+\textbf{Likelihood}&Minor&Moderate&Major\\ \midrule
+Likely&\cellcolor{Yellow}Medium&\cellcolor{BurntOrange}High&\cellcolor{red}Extreme\\ 
+Possible&\cellcolor{LimeGreen}Low&\cellcolor{Yellow}Medium&\cellcolor{BurntOrange} High\\ 
+Unlikely&\cellcolor{OliveGreen}Negligible&\cellcolor{LimeGreen}Low&\cellcolor{Yellow}Medium\\ \bottomrule
+\end{tabular}
+\end{table}
+
+\nohyphens{	% Stop hyphenation in table
+\begin{longtable}{L{0.3\textwidth} L{0.1\textwidth} L{0.5\textwidth}}
+\caption{Risk consequences, controls and recovery methods} \tablabel{risks}\\ \toprule
+\textbf{Event} & \textbf{Risk} & \textbf{Consequences, controls and recovery}\\ \midrule\endfirsthead
+\caption[]{Risk Consequences, Controls and Recovery Methods (continued)}\\ \toprule
+\textbf{Event} & \textbf{Risk} & \textbf{Consequences, controls and recovery}\\ \midrule\endhead 
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Existing platform unable to meet operational requirements}
+The quad bike and associated hardware may not be sufficient to meet the performance specifications or achieve the project goals} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{Yellow}Medium} & \multicolumn{1}{L{0.5\textwidth}}{If the hardware on the quad bike does not function as well as required, it will be difficult to control the vehicle remotely, and even more difficult to automate. This will affect the entire system during the integrated testing stages of the project. In order to ensure that this does not become an issue later on, all aspects of quad bike will be tested and evaluated as soon as it is available. Necessary components will be serviced or replaced, and in the event that the extent of repairs is too large, sufficient funding is available to purchase a new platform.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Unable to successfully find targets}
+The multi-sensor system may not be able to detect and confirm mines with a sufficient confidence level} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{Yellow}Medium} & \multicolumn{1}{L{0.5\textwidth}}{Limited target detection and confirmation ability is likely to be due to difficulties encountered during signal processing and data fusion. This would mean the project objective could not be met. To reduce the likelihood of this occurring, a detailed plan has been devised for software development and testing. The multi-sensor system will only be tested once the performance of the individual sensor systems has been confirmed. In the event that the confidence level is still too low, simulated data can be used, allowing the testing of other related systems, such as the GPS logging system.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Automation and navigation cannot be achieved} Unable to operate the quad bike autonomously due to complexity, part failure or time constraints} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{Yellow}Medium} & \multicolumn{1}{L{0.5\textwidth}}{Controlling the platform remotely is not anticipated to be a difficult task. Full automation of the system, to the level required for operation, carries increased risk due to complexity of the control software. To ensure that automation can be implemented successfully, control systems will be developed with a milestone based approach, where lower-level and simpler controls are implemented before more complex systems are commenced. Additionally, the software will be tested using a virtual platform.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Systems cannot be integrated}
+Unable to use the sensor system in conjunction with the autonomous platform, either due to mounting issues or challenges with software} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{LimeGreen}Low} & \multicolumn{1}{L{0.5\textwidth}}{An inability to integrate systems correctly will hinder testing, meaning the  project objective cannot be realised. Due to the small size and relatively insensitive nature of the sensors to disturbances, mounting will not be difficult. The high level software architecture will be developed in a way that allows for easy integration of systems. If any one of the component systems does not lend itself well to integration, its performance can be simulated.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Unable to find time to complete project}
+Automating the platform, signal processing of sensor data and testing and integration prove too time consuming to manage with other commitments} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{LimeGreen}Low} & \multicolumn{1}{L{0.5\textwidth}}{Not having enough sufficient time will mean that many of the goals will not be completed. The likelihood of this occurring is reduced through project planning (i.e. creation of Gantt chart), which enforces deadlines for individual tasks, hence reducing the possibility of failure. In the event that an individual is unable to complete a task, another member of the group will assist where possible.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Platform sustains damage or fails}
+The quad bike is damaged during testing or undergoes structural, mechanical or electrical component failure} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{LimeGreen}Low} & \multicolumn{1}{L{0.5\textwidth}}{If the quad bike is to crash, individual parts or the sensor payload may suffer damage. The quad bike could also injure an individual. The likelihood of this event is reduced by the fact that the platform will be travelling at low speeds, and the impact to the vehicle is reduced since it is designed for off-road use. Furthermore, an emergency stop switch and remote kill switch has been put in place as control measures. According to the SOP, inspections will be made before commencing operation, to make sure that the sensor payload is attached correctly. If the failure is of an electrical nature, directional control or autonomous capabilities may be lost. The likelihood of this occurring is small, however in the event that it does, parts can be replaced relatively easily and cheaply.} \\ \midrule
+
+\multicolumn{1}{L{0.3\textwidth}}{\textbf{Unable to acquire parts in time}
+Necessary parts for the control system, or replacement parts, are delayed} & \multicolumn{1}{L{0.1\textwidth}}{\cellcolor{LimeGreen}Low} & \multicolumn{1}{L{0.5\textwidth}}{If the delivery of parts takes too long, individual subsystems will be put behind schedule, as will the testing schedule of the entire platform.
+The likelihood of this is reduced through early research and selection of required parts, allowing for sufficient delivery time. In the event that parts do not arrive due to unforeseen circumstances, they can be substituted with available parts that may be of a similar specification.} \\ \bottomrule
+\end{longtable}}
+
+\chapter{Budget Breakdown}
 \chaplabel{budgetApp}
+\textcolor{red}{Don't forget to add some text explaining what is in this appendix (maybe even refer back to the budget section?)}
+\nohyphens{	% Stop hyphenation in table
+\begin{longtable}{L{0.20\textwidth} L{0.52\textwidth} L{0.18\textwidth}}
+\caption{Current expenditure as at 01-06-2016} \tablabel{expenditureCurrent}\\ \toprule
+\textbf{Subsystem} & \textbf{Item} & \textbf{Cost (\$)} \\ \midrule\endfirsthead 
+\caption[]{Current Expenditure (continued)}\\ \toprule
+\textbf{Subsystem} & \textbf{Item} & \textbf{Cost (\$)} \\ \midrule\endhead
+\textbf{Electronics} & 10 Ft Mic Lead & 19.95 \\
+& XLR/USB Converter Plug & 39.95\\
+& Wireless-N Network Adapter & 20.00\\
+& Wired Desktop (Keyboard + Mouse) & 19.00\\
+& Samsung 120GB SSD & 69.00\\ \midrule
+\multicolumn{2}{r}{\textbf{TOTAL}} & 167.90 \\ \bottomrule 
+\end{longtable}}
+
+\nohyphens{	% Stop hyphenation in table
+\begin{longtable}{L{0.20\textwidth} L{0.52\textwidth} L{0.18\textwidth}}
+\caption{Projected expenditure as at 01-06-2016} \tablabel{expenditureFuture}\\ \toprule
+\textbf{Subsystem} & \textbf{Item} & \textbf{Cost (\$)} \\ \midrule\endfirsthead 
+\caption[]{Projected Expenditure (continued)}\\ \toprule
+\textbf{Subsystem} & \textbf{Item} & \textbf{Cost (\$)} \\ \midrule\endhead
+\textbf{Structure} & Actuators (upgrade/replace) & 1,500 \\ 
+& Service/Oil Change & 200 \\
+& Sensor Mount & 340 \\ \midrule
+
+\textbf{Sensors} & Ground Penetrating Radar unit & Supplied by the DSTG \\
+& Metal Detector & 600\\ \midrule
+
+\textbf{Power} & Petrol & 300 \\
+& Batteries & 500 \\ \midrule
+
+\textbf{Electronics} & Computer Upgrades & 500 \\ 
+& 2 x GPS (H B Differential) & 450 \\ 
+& IMU & 50 \\ 
+& Microcontroller & 150 \\ 
+& 9 Axis Accelerometer, Gyro, Magnetometer & 50 \\ 
+& Licenses/Software & 100 \\ 
+& GPS and Control Board & 200 \\ 
+& Camera & 300 \\
+& Receiver/Transmitter & 300 \\
+& Test Mines & 100 \\
+& Misc Electronics & 350 \\ \midrule
+
+\multicolumn{2}{r}{\textbf{TOTAL}} & 5,990 \\ \bottomrule 
+\end{longtable}}
+
+\nohyphens{	% Stop hyphenation in table
+\begin{longtable}{L{0.22\textwidth} L{0.11\textwidth} L{0.11\textwidth} L{0.12\textwidth} L{0.11\textwidth} L{0.11\textwidth} L{0.11\textwidth}}
+\caption{Breakdown of hours and costs (as at 01-06-2016)} \tablabel{labourHours}\\ \toprule
+\textbf{Team Member} & \textbf{Harrison} & \textbf{Jono} & \textbf{Peter} & \textbf{Racquel} & \textbf{Rahul} & \textbf{Total} \\ \midrule\endfirsthead 
+\caption[]{Breakdown of Hours and Cost (continued)}\\ \toprule
+\textbf{Team Member} & \textbf{Jono} & \textbf{Harrison} & \textbf{Peter} & \textbf{Racquel} & \textbf{Rahul} & \textbf{Total} \\ \midrule\endhead 
+\textbf{Hours} \\
+\textbf{February} & - & - & - & 1.5 & 8 & 9.5 \\ 
+\textbf{March} & 39.5 & 51.5 & 43 & 50.75 & 58 & 242.75 \\
+\textbf{April} & 41.25 & 33 & 33.5 & 37.75 & 39 & 184.5 \\ 
+\textbf{May} & 51.75 & 42.5 & 29.5 & 59.5 & 56.5 & 239.75 \\
+\textbf{Total} & 132.5 & 127 & 106 & 149.5 & 161.5 & 676.5 \\ \midrule
+\textbf{Wages} \\
+\textbf{Total (Salary)} & \$3445.00 & \$3302.50 & \$2756.00 & \$3887.00 & \$4199.00 & \$17589.00 \\
+\textbf{Total (Direct)} & \$1033.50 & \$990.60 & \$826.80 & \$1166.10 & \$1259.70 & \$5276.70 \\
+\textbf{Total (Indirect)} & \$4478.50 & \$4292.60 & \$3582.80 & \$5053.10 & \$5458.70 & \$18657.60 \\
+\textbf{Total Cost} & \$8957.00 & \$8585.20 & \$7165.60 & \$10106.20 & \$10917.40 & \$45731.40 \\ \midrule
+\multicolumn{6}{r}{\textbf{Total Labour}} & \$45731.40 \\ \bottomrule
+\end{longtable}}
 
 \chapter{DX Antenna Array GPR Data Sheet}
 \chaplabel{DXAntennaGPR}

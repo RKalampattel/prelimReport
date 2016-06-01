@@ -9,9 +9,81 @@ This chapter gives a high level overview of various management aspects of the pr
 \textcolor{red}{Appraise progress of project, summary of work completed, is project on track? What changes have been made since the charter (goals, specs, funding situation)?}
 \section{Stakeholders}
 
+% The stakeholders of the project remain largely the same as in the project charter, except DSTG is now listed as a project partner and sponsor. \Tabref{stakeholders} shows all contributing members, and describes the roles they fulfil in the project.  
+
+% \nohyphens{	% Stop hyphenation in table
+% \begin{longtable}{L{0.2\textwidth} L{0.25\textwidth} L{0.45\textwidth}}
+% \caption[Stakeholders]{Stakeholders of the project.}\tablabel{stakeholders}\\ \toprule
+% \textbf{Members} & \textbf{Roles} & \textbf{Description}\\ \midrule\endfirsthead 
+% \caption[]{Stakeholders of the project (continued).}\\ \toprule
+% \textbf{Members} & \textbf{Roles} & \textbf{Description}\\ \midrule\endhead
+
+% Peter Dawson & Project Manager, Document Manager & The project manager is responsible for the overall management of the project. The task involves communicating with both the supervisor and group members, assignment of tasks and other project organisation requirements. Also responsible for managing tasks such as document collation and data backup. \\ \midrule
+
+% Jonathan Targett & Technical Manager & The technical manager’s responsibility is the overall management of the technical aspects of the project. The technical aspects may include mechanical resources, electronic resources and other materials for the project.\\ \midrule
+
+% Rahul Kalampattel & Safety Manager & Responsible for the safety requirements of the project. This includes conducting risk assessments, providing a safe operating procedure (SOP), overseeing the completion of such documents and liaising with the necessary third parties to provide relevant safety information.\\ \midrule
+
+% Racquel Punu & Secretary, Test Manager & Responsible for the administrative requirements of the project, including producing meeting minutes, and submission of documents through MyUni. Also responsible for overall management of any testing conducted on systems and their components as required.\\ \midrule
+
+% Harrison Vince & Treasurer, Manufacturing Manager & Responsible for finances within the project. Also responsible for any manufacturing processes undertaken, and other design related issues.\\ \midrule
+
+% Dr Maziar Arjomandi & Project Supervisor & Supervises student members and guides them accordingly.\\ \midrule
+
+% DSTG & Project Partner and Sponsor & Supports the project and project members in providing expertise, loaning of equipment, and funding. A research agreement entitles the Project Partner to share in all knowledge gained over the course of the project.\\ \bottomrule
+
+% \end{longtable}}
+
+% Minor stakeholders include, but are not limited to, the mechanical and electrical engineering workshop staff, school of mechanical engineering administration staff, honours project coordinator and others as deemed necessary by the project members. Communication between all stakeholders include and is not limited to, email, mobile messages, phone call, and social media, such as, Facebook Messenger. %Added because we missed it last time. 
+
 \section{Work Breakdown Structure and Gantt Chart}
 \textcolor{red}{Need to update WBS to reflect changes in project (same goes with Gantt chart)}
+
+
 \section{Risk Management}
+% This section deals with the management of the various risks associated with the project. In \secref{safety}, safety risks are identified through a formal risk assessment. In \secref{risk}, risks to project failure are listed, and the consequences, controls and potential recovery methods are discussed. 
+
+% \subsection{Safety Risks}
+% \seclabel{safety}
+% Safety risks refer to those hazards that may adversely affect a person involved in the operation of the landmine detection platform. After performing a formal risk assessment (\Chapref{riskApp}), two safety risks were identified:
+% \begin{enumerate}
+% \item Risk of being caught between moving parts of a machine. This risk exists because motors and actuators are present on the quad bike, and may act as pinch points. However, the likelihood of someone interacting with the platform during operation is low, hence the residual risk is low.
+% \item Risk of being struck by a vehicle. This risk exists because the quad bike has the potential to behave unpredictably during testing, or become uncontrollable. Again, the likelihood of this occurring is low, and in the even that it does, controls have been put in place (emergency stop and remote kill switch). As a result, the residual risk is low.
+% \end{enumerate}
+% In order to minimise the likelihood of risks, a SOP has been developed (\Chapref{riskApp}). This document MUST be consulted before operating the quad bike. 
+% \nomenclature[A]{SOP}{Safe Operating Procedure}% 
+
+% \subsection{Risks of Project Failure}
+% \seclabel{risk}
+% There are a variety of reasons for which the project goals may not be achieved; in this case, the project could be deemed a failure. The risks to project failure can be analysed by assigning each potential event with a risk level. The risk level is found by using a risk matrix, \Tabref{riskmatrix}, and determining the likelihood and impact of the event. \Tabref{risks} then outlines the consequences of each event, as well as the controls put in place to avoid the event, and ways to recover if the event does take place.
+
 \section{Budget}
-\textcolor{red}{Income and expenditure (to-date and projected), as well as in-kind funding and student hours. Is the project on track financially?}
+Project resources have been identified as follows:
+\begin{itemize}
+\item School Funding: The School of Mechanical Engineering will provide Honours Project students with up to \$200 per student to cover approved expenses.
+\item Workshop Support: the workshop will provide up to 40 hours of workshop time per student valued at \$50 per hour.
+\item Supervisor time: The project supervisor will contribute up to 32 hours towards the project via weekly one hour meetings.
+\item Quad Bike: Through liaising with the DSTG a remotely operated quad bike has been made available.
+\item Detection Equipment: Through liaising with the DSTG detection equipment has been made available.
+\end{itemize}
+The current standing of the project is \$17,332.10 in credit with \$5,990.00 expected future expenditure. \$45,899.30 has been tallied in labour costs thus far. See \secref{sponsorship}, and \chapref{budgetApp} for further detail. The project is on target with regards to finance.
+
+\subsection{Sponsorship}
+\seclabel{sponsorship}
+It was clear from the objectives that funding would be needed to progress with the project, primarily in gaining access to expensive detection equipment and securing a mobile platform.  Contact with DSTG was made and through mutual views on project outcomes, funding was granted to the value of \$16,500 as well as the supply of a remotely operated quad bike, and detection equipment (metal detector and ground penetrating radar units).
+
+\nohyphens{	% Stop hyphenation in table
+\begin{longtable}{L{0.45\textwidth} L{0.27\textwidth} L{0.18\textwidth}}
+\caption{Project funding} \tablabel{funding}\\ \toprule
+\textbf{Sponsor} & \textbf{Date Approved} & \textbf{Funding (\$)} \\ \midrule\endfirsthead 
+\caption[]{Project Funding (continued)}\\ \toprule
+\textbf{Sponsor} & \textbf{Date Approved} & \textbf{Funding (\$)} \\ \midrule\endhead
+The University of Adelaide & 29/02/2016 & 1,000\\
+Defence Science and Technology Group & - & 16,500 \\ \midrule
+\multicolumn{2}{r}{\textbf{TOTAL}} & 17,500 \\ \bottomrule 
+\end{longtable}}
+
+\subsection{Labour Costs}
+To obtain a figure for the total project cost thus far, labour hours put in by each student have been tallied and included.  Each team member recorded their hourly input on a daily basis, a detailed table can be seen in \chapref{budgetApp}. Salaries are calculated at the rate of \$26/hr, with other direct and indirect costs included. Direct costs incur an additional 30\% on top of salary for items such as superannuation, payroll tax, workcover, long service leave, etc. Indirect costs incur an additional 130\% on top of salary for items such as administration and tech support, infrastructure, rent, phone, internet, etc. As at June 1st, labour costs total \$45,731.40.
+
 \end{document}

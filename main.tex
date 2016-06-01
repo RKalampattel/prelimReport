@@ -32,6 +32,7 @@
 \usepackage{ragged2e}	% For non-justified text
 \newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}	% Define a new multicolumn type with left aligned text
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}	% Define a new multicolumn type with centred text
+\newcommand{\mcrot}[4]{\multicolumn{#1}{#2}{\rlap{\rotatebox{#3}{#4}~}}} 
 
 \usepackage{tocloft}	% For editing preamble elements
 \setlength{\cftbeforetoctitleskip}{20pt}
@@ -61,7 +62,7 @@
 \usepackage{siunitx}	% Makes it easy to put units in
 \usepackage{enumitem}	% For multilevel numbered lists
 \usepackage{color}	% To change text colour
-\usepackage[]{refstyle}	% Smart figure/table referencing
+\usepackage{refstyle}	% Smart figure/table referencing
 \usepackage{hyperref}	% Advanced cross referencing, COMMENT THIS LINE TO HIDE RED BOXES, uncomment the line below to maintain functionality
 %\usepackage[hidelinks]{hyperref}	% Advanced cross referencing
 \begin{document}
